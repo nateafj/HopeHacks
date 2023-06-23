@@ -181,7 +181,28 @@ app.get('/db', (req, res) => {
   
 });
 
+app.get('/db/:id', (req, res) => {
 
+  //Database to Webpage 
+
+  const id = req.params.id; // Get the ID parameter from the request URL
+
+  // Execute the JOIN query to fetch combined data from the AQI and Advisory tables for a specific ID
+  const query = 'SELECT AQI.*, Advisory.Affected, Advisory.sensitiveRec, Advisory.normalRec ' +
+    'FROM AQI ' +
+    'JOIN Advisory ON AQI.ID = Advisory.ID ' +
+    'WHERE AQI.ID = ?'; // Add a WHERE clause to filter by the specified ID
+
+  pool.query(query, [id], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).send('An error occurred');
+    } else {
+      // Render the combined data in the aqi_advisory view template
+      res.render('db', { data: results });
+    }
+  });
+});
 // Start the server
 app.listen(369, () => {
   console.log('Server is running on port 369');
