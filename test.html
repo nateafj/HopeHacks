@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://localhost:369/server.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="usernameInput" placeholder="Username">
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button id="registerBtn">Register</button>
+  
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById('registerBtn').addEventListener('click', function() {
+
+        function registerUser(username, password) {
+            pool.query(
+                'INSERT INTO Users (Username, Password) VALUES (?, ?)',
+                [username, password],
+                (error, results) => {
+                if (error) {
+                    console.error('Error registering user:', error);
+                } else {
+                    console.log('User registered successfully!');
+                }
+                }
+            );
+            }
+        const username = document.getElementById('usernameInput').value;
+        const password = document.getElementById('passwordInput').value;
+  
+        axios.post('/register', {
+          username: username,
+          password: password
+        })
+        .then(function(response) {
+          console.log(response.data);
+          // Handle success
+        })
+        .catch(function(error) {
+          console.error(error);
+          // Handle error
+        });
+      });
+    </script>
+  </body>
+  </html>
+</body>
+</html>

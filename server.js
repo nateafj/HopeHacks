@@ -76,6 +76,10 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
+const path = require('path');
+const bcrypt = require('bcrypt')
+
+app.use(express.json());
 
 // Create a MySQL connection pool
 const pool = mysql.createPool({
@@ -84,6 +88,58 @@ const pool = mysql.createPool({
   password: 'password',
   database: 'HopeHacks'
 });
+
+// function registerUser(username, password) {
+//   pool.query(
+//     'INSERT INTO Users (Username, Password) VALUES (?, ?)',
+//     [username, password],
+//     (error, results) => {
+//       if (error) {
+//         console.error('Error registering user:', error);
+//       } else {
+//         console.log('User registered successfully!');
+//       }
+//     }
+//   );
+// }
+
+
+// Display the registration form (GET request)
+app.get('/register', (req, res) => {
+  res.sendFile(__dirname + '/test.html');
+});
+
+// Handle the registration process (POST request)
+app.post('/register', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Store the user in the database
+    pool.query(
+      'INSERT INTO Users (Username, Password) VALUES (?, ?)',
+      [username, hashedPassword],
+      (error, results) => {
+        if (error) {
+          console.error('Error registering user:', error);
+          res.status(500).send('Error registering user');
+        } else {
+          console.log('User registered successfully!');
+          res.status(200).send('User registered successfully!');
+        }
+      }
+    );
+  } catch (error) {
+    console.error('Error hashing password:', error);
+    res.status(500).send('Error registering user');
+  }
+});
+
+
+
+
 
 // Set the view engine and views directory
 app.set('view engine', 'ejs');
@@ -103,7 +159,10 @@ app.set('views', __dirname + '/views');
 //   });
 // });
 
-app.get('/', (req, res) => {
+app.get('/db', (req, res) => {
+
+  //Database to Webpage 
+
   // Execute the JOIN query to fetch combined data from the AQI and Advisory tables
   const query = 'SELECT AQI.*, Advisory.Affected, Advisory.sensitiveRec, Advisory.normalRec ' +
     'FROM AQI ' +
@@ -118,6 +177,8 @@ app.get('/', (req, res) => {
       res.render('db', { data: results });
     }
   });
+
+  
 });
 
 
