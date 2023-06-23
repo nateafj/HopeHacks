@@ -115,7 +115,7 @@ app.get('/', (req, res) => {
       res.status(500).send('An error occurred');
     } else {
       // Render the combined data in the aqi_advisory view template
-      res.render('aqi', { data: results });
+      res.render('db', { data: results });
     }
   });
 });
