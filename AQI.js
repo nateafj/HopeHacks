@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   }
 
   // Construct the API URL
-  const apiUrl = `https://api.waqi.info/feed/${city}/?token=270ecf92c77b964f6924a3140783dd7d4034741b`;
+  const apiUrl = `https://api.waqi.info/feed/${city}/?token=3384b09b33dece368cea032594de015cab94b9b0`;
 
   // Make a request to the AQI API
   fetch(apiUrl)
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 //julian end
 
-app.listen(3000, () => {
+app.listen(567, () => {
   console.log('Server is running on port 3000');
 });
 
