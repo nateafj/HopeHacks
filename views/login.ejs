@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <i class='bx bx-menu' ></i>
+    <!-- <a href="#" class="nav-link">Categories</a> -->
+    <form action="#">
+      <div class="form-input">
+        <!-- DELETE everything in green on this page -->
+        <!-- <input type="search" placeholder="Search..."> -->
+        <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+      </div>
+    </form>
+    <input type="checkbox" id="switch-mode" hidden>
+    <label for="switch-mode" class="switch-mode"></label>
+    <!-- <a href="#" class="notification">
+      <i class='bx bxs-bell' ></i>
+      <span class="num">8</span>
+    </a> -->
+    <!-- <a href="#" class="profile">
+      <img src="img/people.png">
+    </a> -->
+  </nav>
+  
+  <div id="content">
+    <main>
+      <input type="checkbox" id="switch-mode" hidden>
+      <label for="switch-mode" class="switch-mode"></label>
+
+      <div class="login-container">
+        <h1>Login</h1>
+          <% if (typeof error !== 'undefined') { %>
+            <p><%= error %></p>
+          <% } %>
+        <form action="/login" method="POST">
+          <input type="text" name="username" placeholder="Username" required><br>
+          <input type="password" name="password" placeholder="Password" required><br>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      
+    </main>
+    
+  </div>
+  
+</body>
+</html>
