@@ -218,7 +218,7 @@ li {
 }
 
 .blue {
-  background-image: linear-gradient(to bottom right, darkblue, dodgerblue);
+  background-image: linear-gradient(to bottom right,darkred, tomato);
 }
 
 .green {
@@ -226,7 +226,7 @@ li {
 }
 
 .red {
-  background-image: linear-gradient(to bottom right, darkred, tomato);
+  background-image: linear-gradient(to bottom right, darkblue, dodgerblue);
 }
 
 .yellow {

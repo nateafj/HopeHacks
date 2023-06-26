@@ -238,47 +238,48 @@
     </div>
     <ul class="nav-menu">
       <li class="nav-item">
-        <a class="nav-link-a" href="index.html">Home</a>
+        <a class="nav-link-a" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">meet the tea</a>
+        <a class="nav-link" href="airQuality">Air Quality Lookup</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link-a" href="">News</a>
+        <a class="nav-link-a" href="">Reference</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Contact</a>
+        <a class="nav-link" href="">Meet the team</a>
       </li>
     </ul>
 
   </nav>
   <div class="nav-borader"></div>
   <section class="banner">
-    <h1>AQI Lookup</h1>
-    <form action="/" method="GET">
-      <label for="city">Enter a city:</label>
-      <input type="text" id="city" name="city" required>
-      <button type="submit">Get AQI</button>
-    </form>
-    <h1>Air Quality Information</h1>
-    <% if (airQualityData) { %>
-    <div class="container">
-      <div class="box red"> <h1>AQI : <%= airQualityData.aqi %></h1></div>
-      <div class="box green"><h1>Category : <%= airQualityData.category %></h1></div>
-      <div class="box blue"><h1>Pollutants</h1></div>
-      <% airQualityData.pollutants.forEach(function(pollutant) { %>
-        <div class="box yellow">
-          <h1>
-            <%= pollutant.pollutant %>: <%= pollutant.concentration %>
-              <%= pollutant.unit %>
-          </h1>
-        </div>
-        <% }); %>
-    </div>
-      <% } else { %>
-        <p>No air quality data available.</p>
-        <% } %>
 
+      <h1>AQI Lookup</h1>
+      <form action="/" method="GET">
+        <label for="zipcode">Enter a Zipcode:</label>
+        <input type="text" id="zipcode" name="zipcode" required>
+        <button >Get AQI</button>
+      </form>
+      <h1>Air Quality Information</h1>
+      <% if (airQualityData) { %>
+      <div class="container">
+        <div class="box blue"> <h1>AQI : <%= airQualityData.aqi %></h1></div>
+        <div class="box green"><h1>Category : <%= airQualityData.category %></h1></div>
+        <div class="box red"><h1>Pollutants</h1></div>
+        <% airQualityData.pollutants.forEach(function(pollutant) { %>
+          <div class="box yellow">
+            <h1>
+              <%= pollutant.pollutant %>: <%= pollutant.concentration %>
+                <%= pollutant.unit %>
+            </h1>
+          </div>
+          <% }); %>
+      </div>
+        <% } else { %>
+          <p>No air quality data available.</p>
+          <% } %>
+  
 
           <div class="footer-borader"></div>
           <footer>
