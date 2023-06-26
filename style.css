@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
+/****************************************  Nav Section  *******************************************/
+
+h1 {
+  text-align: center;
+}
+body {
+  margin: 0px;
+  background-color: rgba(135, 207, 235, 0.647);
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  width: auto;
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 14px 16px;
+}
+.nav-item {
+  list-style: none;
+  float: right;
+  display: contents;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.nav-link:hover, .nav-link-a:hover {
+  color: skyblue;
+  border-radius: 1rem;
+}
+.logo {
+  color: white;
+  z-index: 1;
+}
+.nav-borader {
+  border: solid skyblue;
+  border-radius: 1rem;
+}
+.nav-menu {
+  font: small-caps bold 18px/30px Berling;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 35px;
+  z-index: 10;
+  display: contents;
+}
+/*-----------------------nav bar-------------------------------------*/
+
+
+.row{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.column{
+    width: 450px;
+}
+
+
+.QualityScale{
+    background-color: white;
+    border: 1px solid black;
+    margin: 0;
+    border-spacing: 0;
+}
+.QualityScale thead th{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.QualityScale tbody td{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.AB1{
+    box-shadow: 0 5px 15px rgba(128 128 128 / 41.7%);
+    border-radius: 25px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.859);
+}
+.AB1 h2, p{
+    text-align: center;
+}
+
+.R-Links ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.R-Links a{
+    color: black;
+}
+
+.GoodAir{
+    background-color: green;
+    color: white;
+}
+.ModAir{
+    background-color: yellow;
+    color: black;
+}
+.USenAir{
+    background-color: orange;
+    color: black;
+}
+.UAir{
+    background-color: Red;
+    color: white;
+}
+.VUAir{
+    background-color: purple;
+    color: white;
+}
+.HazAir{
+    background-color: #7e0023;
+    color: white;
+}
+/*slider*/
+
+.Team{
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 30px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 5px 15px rgba(128 128 128 / 41.7%);
+}
+.team-member{
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.Tname{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    width: 150px;
+    margin-left: 80vh;
+}
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 8vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  cursor: pointer;
+  z-index: 8;
+}
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  
+  .nxt-btn {
+    right: 0;
+  }
+  
+  .pre-btn img,
+  .nxt-btn img {
+    opacity: 0.2;
+  }
+  
+  .pre-btn:hover img,
+  .nxt-btn:hover img {
+    opacity: 1;
+  }
+/*---------------------*/
+.photos{
+    width: 14vh;
+    height: 14vh;
+    display: block;
+    margin: 2vh auto 1vh auto;
+    border-radius: 5vh;
+    border: 1px solid white;
+  }
+  
+  .Tcolumn{
+    flex: 0 0 auto;
+    width: 250px;
+    height: 350px;
+    margin-right: 40px;
+  }
+  .card{
+    box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.30);
+    border: 1px solid white;
+    background-color: #0000009d ;
+    display: flex;
+    flex-direction: column;
+  }
+  .about-section{
+    padding: 5vh;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+  }
+  .container{
+    padding: 0 16px;
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-size: 2vh;
+  }
+  .container::after, .row::after{
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .container h2{
+    font-size: 3vh;
+  }
+  
+  .title{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .btn{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #3832f6;
+    border: 2px solid #4cacfa;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  .btn:hover{
+    background-color: darkblue;
+  }
+  .team{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+  }
+
+  /*--------------------- footer -------------*/
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    width: 400px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background-color: black;
+    font-family: "Montserrat", sans-serif;
+  }
+  .footer-navbar {
+    text-align: center;
+    margin-top: 0.938rem;
+  }
+  .nav-links{
+    padding-left: 0px;
+    list-style: none;
+  }
+  .footer-navbar a {
+    color: white;
+    font-size: 1.125rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: 0.3rem;
+    text-decoration: none;
+  }
+  .copy {
+    color: white;
+  }
+  .footer-borader {
+    border: solid skyblue;
+    border-radius: 1rem;
+  }
+  .social-links a{
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+  .social-links a:hover{
+    background-color: skyblue;
+  }
+
+  /*----------------- MediaQ -------------*/
+  @media screen and (max-width: 768px) {
+    .Tname{
+        margin-left: 40%;
+    }
+
+  }
+
+  @media screen and (max-width: 450px) {
+
+    .column{
+        width: 100%;
+    }
+    .Tname{
+        margin-left: 30%;
+    }
+  }
