@@ -7,6 +7,7 @@ body {
   margin: 0px;
 }
 nav {
+  position: sticky;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -165,6 +166,10 @@ li {
 }
 /****************************************  Footer Section  ******************************/
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100dvw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -192,6 +197,9 @@ li {
   border-radius: 1rem;
 }
 
+.banner{
+  background: skyblue;
+}
 
 .container {
   display: flex;
@@ -205,18 +213,20 @@ li {
 
 .box {
   flex: 1;
+  background-color: transparent;
+ 
 }
 
-.red {
-  background-image: linear-gradient(to bottom right, darkred, tomato);
+.blue {
+  background-image: linear-gradient(to bottom right, darkblue, dodgerblue);
 }
 
 .green {
   background-image: linear-gradient(to bottom right, darkgreen, lime);
 }
 
-.blue {
-  background-image: linear-gradient(to bottom right, darkblue, dodgerblue);
+.red {
+  background-image: linear-gradient(to bottom right, darkred, tomato);
 }
 
 .yellow {

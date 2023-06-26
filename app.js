@@ -8,7 +8,7 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   const apiKey = '08D5FF0B-FE8E-4121-B16B-D46CC14D62AA';
-  const zipCode = '90099'; // Example: set the desired ZIP code
+  const zipCode = req.query.city; // Example: set the desired ZIP code
 
   const url = `https://www.airnowapi.org/aq/forecast/zipCode/?format=application/json&zipCode=${zipCode}&API_KEY=${apiKey}`;
 
