@@ -256,10 +256,10 @@
   <section class="banner">
 
       <h1>AQI Lookup</h1>
-      <form action="/" method="GET">
+      <form action="/airQuality" method="GET">
         <label for="zipcode">Enter a Zipcode:</label>
         <input type="text" id="zipcode" name="zipcode" required>
-        <button >Get AQI</button>
+        <button type="submit">Get AQI</button>
       </form>
       <h1>Air Quality Information</h1>
       <% if (airQualityData) { %>
